@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration;
 import org.springframework.hateoas.config.EnableHypermediaSupport;
+import org.springframework.hateoas.config.EnableHypermediaSupport.HypermediaType;
 import org.springframework.http.MediaType;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -226,7 +227,7 @@ class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 @Configuration
 @ComponentScan
-@EnableHypermediaSupport
+@EnableHypermediaSupport(type = HypermediaType.HAL)
 @EnableWebMvc
 class WebMvcConfiguration extends WebMvcConfigurationSupport {
 

@@ -1,11 +1,16 @@
 package com.jl.crm.web;
 
-import com.jl.crm.services.*;
-
-import org.apache.commons.logging.*;
-import org.springframework.data.rest.repository.annotation.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.springframework.data.rest.core.annotation.HandleAfterDelete;
+import org.springframework.data.rest.core.annotation.HandleAfterSave;
+import org.springframework.data.rest.core.annotation.HandleBeforeCreate;
+import org.springframework.data.rest.core.annotation.RepositoryEventHandler;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
+
+import com.jl.crm.services.Customer;
+import com.jl.crm.services.CustomerWriteException;
 
 @Component
 @RepositoryEventHandler (Customer.class)

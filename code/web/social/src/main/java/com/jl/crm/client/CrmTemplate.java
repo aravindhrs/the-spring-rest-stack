@@ -301,9 +301,15 @@ public class CrmTemplate extends AbstractOAuth2ApiBinding implements CrmOperatio
     }
 
     public static class UserResource extends Resource<User> {
+			public UserResource(User user) {
+				super(user);
+			}
     }
 
     public static class CustomerResource extends Resource<Customer> {
+			public CustomerResource(Customer customer) {
+				super(customer);
+			}
     }
 
     /**

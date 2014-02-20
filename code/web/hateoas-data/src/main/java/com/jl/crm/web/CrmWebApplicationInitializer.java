@@ -4,6 +4,7 @@ import com.jl.crm.services.ServiceConfiguration;
 import org.springframework.context.annotation.*;
 import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration;
 import org.springframework.hateoas.config.EnableHypermediaSupport;
+import org.springframework.hateoas.config.EnableHypermediaSupport.HypermediaType;
 import org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter;
 import org.springframework.security.web.session.HttpSessionEventPublisher;
 import org.springframework.web.filter.HiddenHttpMethodFilter;
@@ -59,7 +60,7 @@ public class CrmWebApplicationInitializer
 @Configuration
 @ComponentScan
 @EnableWebMvc
-@EnableHypermediaSupport
+@EnableHypermediaSupport(type = HypermediaType.HAL)
 class WebMvcConfiguration {
 	@Bean
 	public MultipartResolver multipartResolver() {

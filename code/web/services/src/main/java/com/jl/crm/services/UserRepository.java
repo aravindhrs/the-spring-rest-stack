@@ -2,7 +2,7 @@ package com.jl.crm.services;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
-import org.springframework.data.rest.repository.annotation.RestResource;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import java.util.List;
  * Base services for persisting {@link User} users
  *
  */
-@RestResource (path = "users", rel = "users")
+@RepositoryRestResource
 public interface UserRepository extends PagingAndSortingRepository<User, Long> {
 
 	User findByUsername(@Param("username") String username);
